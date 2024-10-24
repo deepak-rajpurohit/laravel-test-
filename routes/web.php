@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\Country;
+use App\Http\Middleware\Age;
 Route::get('/', function () {
     return view('home');
 });
@@ -49,6 +51,16 @@ Route::controller(StudentController::class)->group(function(){
 Route::get('show1','show');
 Route::get('add1','add');
 Route::get('delete','delete');
+Route::get('profile/{name}','profile');
+
 });
 
-Route::get('profile/{name}', [StudentController::class,'profile']);
+
+
+Route::middleware('check1')->group(function(){
+    Route::view('hello','hello');
+Route::view('hello1','hello1');
+});
+
+Route::view('age','age')->middleware([Country::class, Age::class]);
+ROute::view('country','country');
