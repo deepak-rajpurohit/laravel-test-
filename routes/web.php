@@ -50,3 +50,5 @@ Route::get('show1','show');
 Route::get('add1','add');
 Route::get('delete','delete');
 });
+
+Route::get('profile/{name}', [StudentController::class,'profile']);

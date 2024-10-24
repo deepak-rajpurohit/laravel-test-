@@ -19,4 +19,7 @@ class StudentController extends Controller
     function delete(){
         return "Delete students";
     }
+    public function profile($name){
+        return $name;
+    }
 }
