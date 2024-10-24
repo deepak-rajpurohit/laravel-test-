@@ -13,6 +13,9 @@ class StudentController extends Controller
     function add(){
         return "Add new students";
     }
+    public function hello(){
+
+    }
     function delete(){
         return "Delete students";
     }
